@@ -1,0 +1,47 @@
+/*
+c code to sort an array of integers of lenght n
+where n is the lenght defined by user
+Written by Adenekan Esther Oluwatomi
+date:24/04/2016
+This sorting algorithm has a worst case complexity of n^2
+*/
+#include <stdio.h>
+int swap(int *, int *);//function prototype
+main()
+{
+	printf("Name:ADENEKAN ESTHER OLUWATOMI\nMatric number:2013/2374\nDepartment:CSC\n\n");
+	printf("This is a C-code that sorts a list of integers in ascending order\n\n");
+	int n,i,k,small;
+	printf("How many integers do you want to sort:\t");
+	scanf("%d",&n);
+	int numbers[n];
+	for (k=0;k<n;k++)
+	{
+		int number;
+		printf("Enter number:\t");
+		scanf("%d",&number);
+		numbers[k]=number;
+    }
+	printf("The sorted list is:\n");
+	for(i=0;i<n;i++)
+	{	
+	for (k=i+1;k<n;k++)
+	{
+		if (numbers[k]<numbers[i])
+		    {
+		    swap(&numbers[i],&numbers[k]);
+		    }//end of if
+	}//end of inner for loop
+	
+	printf("%d\n",numbers[i]);
+	}//end of main for loop
+	
+}//end of main function
+int swap(int *a,int *b)//to interchange the position of two elements
+	{
+		int temp;
+		temp=*b;
+		*b=*a;
+		*a=temp;
+		return 0;
+	}
